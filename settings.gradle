@@ -1,0 +1,5 @@
+rootProject.name = 'HRMP'
+include 'auth-microservice'
+include 'config-server'
+include 'userprofile-microservice'
+
