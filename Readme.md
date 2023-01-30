@@ -1,2 +1,1 @@
-Push!2323
-try again
+Şeyda deneme
