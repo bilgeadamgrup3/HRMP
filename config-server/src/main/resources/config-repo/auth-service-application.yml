@@ -2,13 +2,9 @@ server:
   port: 9091
 
 spring:
-  security:
-    user:
-      name: java4
-      password: root
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/Authmicroservice
+    url: jdbc:postgresql://localhost:5432/HRMP-Auth
     username: postgres
     password: root
   jpa:

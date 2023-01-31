@@ -1,26 +1,13 @@
 server:
-  port: 9091
+  port: 9092
 
 spring:
-  security:
-    user:
-      name: java4
-      password: root
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/Authmicroservice
+    url: jdbc:postgresql://localhost:5432/HRMP-UserProfile
     username: postgres
     password: root
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
-
-myapplication:
-  auth:
-    ip: localhost
-    port: 9091
-  user:
-    ip: localhost
-    port: 9092
-    feignurl: http://localhost:9092/v1/dev/userprofile

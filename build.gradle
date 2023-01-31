@@ -41,8 +41,8 @@ allprojects{
         implementation libs.springBootValidation
         implementation libs.mapstruct
         annotationProcessor libs.mapstructProcessor
-        implementation libs.springCloudStarterSleuth
-        implementation libs.springCloudStarterZipkin
+        //implementation libs.springCloudStarterSleuth
+        //implementation libs.springCloudStarterZipkin
         implementation libs.jwt
     }
 }
