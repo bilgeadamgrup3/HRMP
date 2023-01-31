@@ -1,5 +1,6 @@
 package com.bilgeadam.repository.entity;
 
+import com.bilgeadam.utility.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import javax.persistence.*;
 @SuperBuilder
 @Table(name = "user_profiles")
 @Entity
-public class UserProfile {
+public class UserProfile extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

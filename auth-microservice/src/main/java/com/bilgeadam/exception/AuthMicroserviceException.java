@@ -1,10 +1,7 @@
 package com.bilgeadam.exception;
 
-import javax.lang.model.type.ErrorType;
 
-/**
- * errortype import düzelt!!
- */
+
 public class AuthMicroserviceException extends RuntimeException{
     private final ErrorType errorType;
 
