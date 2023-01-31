@@ -5,3 +5,4 @@
 ## Şelçuk Durukan
 ## Şeyda Mersin
 ## Barış Yücetürk
+deneme yazısı
