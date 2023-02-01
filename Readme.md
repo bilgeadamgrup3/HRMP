@@ -1,11 +1,5 @@
 # HumanResourceProject
 
-<b> Barış Mert Cömertoğlu </b> 
-<b> Yiğit Aral Yücepur </b> 
-<b> Şelçuk Durukan </b> 
-<b> Şeyda Mersin </b> 
-<b> Barış Yücetürk </b> 
-
 Projede İK çalışanı (yönetici) ve personel rolleri bulunmaktadır.
 
 <b> Yönetici Yetkileri: </b> 
@@ -20,3 +14,10 @@ Projede İK çalışanı (yönetici) ve personel rolleri bulunmaktadır.
 * İzin talep edebilir. (Doğum izni, yıllık izin, mazeret izni vb..) Tüm bu izin tipleri için validasyonlar vardır.
 * Avans talep edebilir.
 * Harcama bildirimi yapabilir.
+
+## Authors
+* Barış Mert Cömertoğlu 
+* Yiğit Aral Yücepur 
+* Şelçuk Durukan 
+* Şeyda Mersin 
+* Barış Yücetürk 
