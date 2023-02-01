@@ -1,7 +1,9 @@
 package com.bilgeadam.exception;
 
 
+import lombok.Getter;
 
+@Getter
 public class AuthMicroserviceException extends RuntimeException{
     private final ErrorType errorType;
 
