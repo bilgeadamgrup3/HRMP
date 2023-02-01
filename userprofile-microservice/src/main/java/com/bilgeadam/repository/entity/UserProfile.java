@@ -18,6 +18,7 @@ public class UserProfile extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    private long authid;
     private String name;
     private String middleName;
     private String lastName;

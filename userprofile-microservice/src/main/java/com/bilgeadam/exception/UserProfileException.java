@@ -3,16 +3,16 @@ package com.bilgeadam.exception;
 import lombok.Getter;
 
 @Getter
-public class UserprofileExecption extends RuntimeException{
+public class UserProfileException extends RuntimeException{
 
     private final ErrorType errorType;
 
-    public UserprofileExecption(ErrorType errorType) {
+    public UserProfileException(ErrorType errorType) {
         super(errorType.getMessage());
         this.errorType = errorType;
     }
 
-    public UserprofileExecption(ErrorType errorType, String message) {
+    public UserProfileException(ErrorType errorType, String message) {
         super(message);
         this.errorType = errorType;
     }

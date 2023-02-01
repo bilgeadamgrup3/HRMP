@@ -28,9 +28,9 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(createErrorMessage(exception,errorType),HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @ExceptionHandler(UserprofileExecption.class)
+    @ExceptionHandler(UserProfileException.class)
     @ResponseBody
-    public ResponseEntity<ErrorMessage> handlerAuthMicroseviceException(UserprofileExecption exception){
+    public ResponseEntity<ErrorMessage> handlerAuthMicroseviceException(UserProfileException exception){
         return new ResponseEntity<>(createErrorMessage(exception,exception.getErrorType()), HttpStatus.BAD_REQUEST);
     }
 

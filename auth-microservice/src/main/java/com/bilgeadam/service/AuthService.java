@@ -24,8 +24,11 @@ public class AuthService extends ServiceManager<Auth,Long> {
      * kullanmak istediğiniz interface, services, component gibi sınıflardan nesne türetmeke için 2 yolunuz va r
      * @Autowired ile işaretlemek ya da Constructor Injection ile kullanmak.
      */
+
     private final IUserProfileManager userProfileManager;
+
     private final JwtTokenManager jwtTokenManager;
+
     //private final CreateUserProducer createUserProducer;  CreateUserProducer createUserProducer
     public AuthService(IAuthRepository repository, IUserProfileManager userProfileManager,
                        JwtTokenManager jwtTokenManager){
@@ -67,17 +70,13 @@ public class AuthService extends ServiceManager<Auth,Long> {
             throw new AuthMicroserviceException(ErrorType.REGISTER_KULLANICIADI_KAYITLI);
 
         Auth auth = save(IAuthMapper.INSTANCE.fromRegisterRequestDto(dto));
-        createUserProducer.converdAndSendMessageCreateUser(CreateUser.builder()
-                .authid(auth.getId())
-                .username(auth.getUsername())
-                .email(auth.getEmail())
-                .build());
-//        userProfileManager.createProfile(CreateProfileRequestDto.builder()
-//                        .token("")
-//                        .authid(auth.getId())
-//                        .username(auth.getUsername())
-//                        .email(auth.getEmail())
-//                .build());
+
+        userProfileManager.createProfile(CreateProfileRequestDto.builder()
+                        .token("")
+                        .authid(auth.getId())
+                        .username(auth.getUsername())
+                        .email(auth.getEmail())
+                        .build());
         RegisterResponseDto result = IAuthMapper.INSTANCE.fromAuth(auth);
         result.setRegisterstate(100);
         result.setContent(auth.getEmail()+" ile başarı şekilde kayıt oldunuz.");
