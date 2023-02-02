@@ -55,7 +55,6 @@ public class AuthService extends ServiceManager<Auth,Long> {
         if(authRepository.findOptionalByEmail(dto.getEmail()).isPresent()){
             throw new AuthMicroserviceException(ErrorType.DUPLICATE_EMAIL_ERROR);
         }
-
         Auth auth = IAuthMapper.INSTANCE.fromRequestToAuth(dto);
         auth.setActivationCode(CodeGenerator.generateCode());
         save(auth);

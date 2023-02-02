@@ -15,6 +15,7 @@ import javax.validation.constraints.NotBlank;
 @Data
 @Builder
 @Entity
+@Table(name = "tbl_auth")
 public class Auth {
 
     @Id

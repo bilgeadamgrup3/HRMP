@@ -8,10 +8,7 @@ import com.bilgeadam.service.AuthService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -24,13 +21,15 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping(LOGIN)
+    @CrossOrigin("*")
     public ResponseEntity<LoginResponseDto> login(@RequestBody @Valid LoginRequestDto dto){
         return  ResponseEntity.ok(authService.login(dto));
     }
 
     @PostMapping(REGISTER)
+    @CrossOrigin("*")
     @Operation(summary = "kayit eden metot")
-    public ResponseEntity<RegisterResponseDto> registerWebsiteManager(@RequestBody @Valid RegisterRequestDto dto){
+    public ResponseEntity<RegisterResponseDto> register(@RequestBody @Valid RegisterRequestDto dto){
         return  ResponseEntity.ok(authService.save(dto));
     }
 }
