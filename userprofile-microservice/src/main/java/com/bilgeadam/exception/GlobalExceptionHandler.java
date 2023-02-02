@@ -38,7 +38,7 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public final ResponseEntity<ErrorMessage> handleMessageNotReadableException(
             HttpMessageNotReadableException exception) {
-        ErrorType errorType = BAD_REQUEST_ERROR;
+        ErrorType errorType = BAD_REQUEST;
         return new ResponseEntity<>(createErrorMessage(exception,errorType), errorType.getHttpStatus());
     }
 
@@ -46,17 +46,10 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public final ResponseEntity<ErrorMessage> handleInvalidFormatException(
             InvalidFormatException exception) {
-        ErrorType errorType = BAD_REQUEST_ERROR;
+        ErrorType errorType = BAD_REQUEST;
         return new ResponseEntity<>(createErrorMessage(exception,errorType), errorType.getHttpStatus());
     }
 
-    @ExceptionHandler(DataIntegrityViolationException.class)
-    @ResponseBody
-    public final ResponseEntity<ErrorMessage> handlePSQLException(
-            DataIntegrityViolationException exception) {
-        ErrorType errorType = REGISTER_KULLANICIADI_KAYITLI;
-        return new ResponseEntity<>(createErrorMessage(exception,errorType), errorType.getHttpStatus());
-    }
 
 
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
@@ -64,7 +57,7 @@ public class GlobalExceptionHandler {
     public final ResponseEntity<ErrorMessage> handleMethodArgumentMisMatchException(
             MethodArgumentTypeMismatchException exception) {
 
-        ErrorType errorType = BAD_REQUEST_ERROR;
+        ErrorType errorType = BAD_REQUEST;
         return new ResponseEntity<>(createErrorMessage(exception,errorType), errorType.getHttpStatus());
     }
 
@@ -73,7 +66,7 @@ public class GlobalExceptionHandler {
     public final ResponseEntity<ErrorMessage> handleMethodArgumentMisMatchException(
             MissingPathVariableException exception) {
 
-        ErrorType errorType = BAD_REQUEST_ERROR;
+        ErrorType errorType = BAD_REQUEST;
         return new ResponseEntity<>(createErrorMessage(exception,errorType), errorType.getHttpStatus());
     }
 
@@ -83,7 +76,7 @@ public class GlobalExceptionHandler {
     public final ResponseEntity<ErrorMessage> handleMethodArgumentNotValidException(
             MethodArgumentNotValidException exception) {
 
-        ErrorType errorType = BAD_REQUEST_ERROR;
+        ErrorType errorType = BAD_REQUEST;
         List<String> fields = new ArrayList<>();
         exception
                 .getBindingResult()

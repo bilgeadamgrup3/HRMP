@@ -48,7 +48,7 @@ public class AuthService extends ServiceManager<Auth,Long> {
         return loginResponseDto;
     }
 
-    @Transactional
+
     public RegisterResponseDto save(RegisterRequestDto dto){
         if(!dto.getPassword().equals(dto.getRePassword()))
             throw  new AuthMicroserviceException(ErrorType.REGISTER_REPASSWORD_ERROR);
