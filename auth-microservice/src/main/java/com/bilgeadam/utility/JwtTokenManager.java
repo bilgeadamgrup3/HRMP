@@ -46,6 +46,5 @@ public class JwtTokenManager {
         }catch (Exception exception){
             return Optional.empty();
         }
-
     }
 }

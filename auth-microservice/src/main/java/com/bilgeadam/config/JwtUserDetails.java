@@ -29,15 +29,12 @@ public class JwtUserDetails implements UserDetailsService {
         Optional<Auth> auth = authService.findById(authid);
         if (auth.isEmpty()) return null;
         List<GrantedAuthority> authorities = new ArrayList<>();
-        /**
-         * Burada belirtilen isimlendirmeler tamamen size aittir. özel bir kullanım değildir.
-         * Yetki Adı: yönetici, asistan,
-         */
+
         authorities.add(new SimpleGrantedAuthority(auth.get().getRole().toString()));
 
         return User.builder()
                 .username(auth.get().getEmail())
-                .password("")
+                .password(auth.get().getPassword())
                 .accountLocked(false)
                 .accountExpired(false)
                 .authorities(authorities)

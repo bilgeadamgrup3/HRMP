@@ -11,6 +11,7 @@ import com.bilgeadam.manager.UserProfileManager;
 import com.bilgeadam.mapper.IAuthMapper;
 import com.bilgeadam.repository.AuthRepository;
 import com.bilgeadam.repository.entity.Auth;
+import com.bilgeadam.repository.entity.Roles;
 import com.bilgeadam.utility.CodeGenerator;
 import com.bilgeadam.utility.JwtTokenManager;
 import com.bilgeadam.utility.ServiceManager;
@@ -48,8 +49,7 @@ public class AuthService extends ServiceManager<Auth,Long> {
         return loginResponseDto;
     }
 
-
-    public RegisterResponseDto save(RegisterRequestDto dto){
+    public RegisterResponseDto registerManager(RegisterRequestDto dto) {
         if(!dto.getPassword().equals(dto.getRePassword()))
             throw  new AuthMicroserviceException(ErrorType.REGISTER_REPASSWORD_ERROR);
         if(authRepository.findOptionalByEmail(dto.getEmail()).isPresent()){
@@ -57,9 +57,9 @@ public class AuthService extends ServiceManager<Auth,Long> {
         }
         Auth auth = IAuthMapper.INSTANCE.fromRequestToAuth(dto);
         auth.setActivationCode(CodeGenerator.generateCode());
+        auth.setRole(Roles.GENERAL_MANAGER);
         save(auth);
         userProfileManager.createProfile(IAuthMapper.INSTANCE.fromAuth(auth));
         return IAuthMapper.INSTANCE.fromAuthToLoginResponse(auth);
     }
-
 }
