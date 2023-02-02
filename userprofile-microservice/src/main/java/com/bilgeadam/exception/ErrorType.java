@@ -9,11 +9,14 @@ import org.springframework.http.HttpStatus;
 @NoArgsConstructor
 @Getter
 public enum ErrorType {
-    INTERNAL_ERROR(5100,"Sunucuda beklenmeyen hata oluştu",HttpStatus.INTERNAL_SERVER_ERROR),
-    BAD_REQUEST_ERROR(4100,"Parametre eksik yada hatalı",HttpStatus.BAD_REQUEST),
-    LOGIN_ERROR(4110,"Kullanıcı adı yada şifre hatalı",HttpStatus.BAD_REQUEST),
-    REGISTER_KULLANICIADI_KAYITLI(4112,"Kullanıcı adı zaten kayıtlı",HttpStatus.BAD_REQUEST),
-    REGISTER_REPASSWORD_ERROR(4111,"Şifreler uyuşmuyor" , HttpStatus.BAD_REQUEST);
+    INTERNAL_ERROR(5100,"Sunucu Hatası", HttpStatus.INTERNAL_SERVER_ERROR),
+    BAD_REQUEST(1100,"Parametre Hatası",HttpStatus.BAD_REQUEST),
+    USER_NOT_FOUND(1111,"Boyle Bir kullanıcı bulunamadı",HttpStatus.BAD_REQUEST),
+    LOGIN_ERROR(1112,"Kullanıcı adı veya şifre Hatalı",HttpStatus.BAD_REQUEST),
+    WEBSITE_MANAGER_NOT_CREATED(1113,"WebsiteManager Olusturulamadi",HttpStatus.BAD_REQUEST),
+    INVALID_TOKEN(1114,"Gecersiz Token?",HttpStatus.BAD_REQUEST),
+    REGISTER_REPASSWORD_ERROR(1115,"Girilen sifreler uyusmuyor",HttpStatus.BAD_REQUEST),
+    DUPLICATE_EMAIL_ERROR(1116,"Girdiginiz E-mail kullanilmakta.",HttpStatus.BAD_REQUEST);
 
     int code;
     String message;

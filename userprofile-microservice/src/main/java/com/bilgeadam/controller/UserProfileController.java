@@ -1,6 +1,8 @@
 package com.bilgeadam.controller;
 
 import com.bilgeadam.dto.request.CreateProfileRequestDto;
+import com.bilgeadam.dto.request.UpdateRequestDto;
+import com.bilgeadam.dto.response.SummaryResponseDto;
 import com.bilgeadam.repository.entity.UserProfile;
 import com.bilgeadam.service.UserProfileService;
 import lombok.RequiredArgsConstructor;
@@ -27,5 +29,10 @@ public class UserProfileController {
                 .email(dto.getEmail())
                 .build());
         return ResponseEntity.ok(true);
+    }
+
+    @PutMapping("/update")
+    public ResponseEntity<Boolean> updateRequest(UpdateRequestDto request){
+        return ResponseEntity.ok(userProfileService.updateRequest(request));
     }
 }

@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 public class UpdateRequestDto {
+    long id;
     private String profileImage;
     private String address;
     private String telephone;
