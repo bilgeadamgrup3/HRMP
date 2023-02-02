@@ -1,8 +1,7 @@
-package com.bilgeadam.config.security;
+package com.bilgeadam.config;
 
 import com.bilgeadam.repository.entity.Auth;
 import com.bilgeadam.service.AuthService;
-import com.bilgeadam.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -20,8 +19,7 @@ import java.util.Optional;
 public class JwtUserDetails implements UserDetailsService {
     @Autowired
     AuthService authService;
-    @Autowired
-    RoleService roleService;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return null;
@@ -35,11 +33,10 @@ public class JwtUserDetails implements UserDetailsService {
          * Burada belirtilen isimlendirmeler tamamen size aittir. özel bir kullanım değildir.
          * Yetki Adı: yönetici, asistan,
          */
-        roleService.findByAuthid(authid).forEach(x->{
-            authorities.add(new SimpleGrantedAuthority(x.getRole()));
-        });
+        authorities.add(new SimpleGrantedAuthority(auth.get().getRole().toString()));
+
         return User.builder()
-                .username(authid.toString())
+                .username(auth.get().getEmail())
                 .password("")
                 .accountLocked(false)
                 .accountExpired(false)

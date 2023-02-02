@@ -5,27 +5,31 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder
-@Table(name = "tblauth")
 @Entity
 public class Auth {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String username;
-    String password;
-    String email;
-    Long createdate;
-    Long updatedate;
-    /**
-     * Numara yapılarında int değeri yada string değerini
-     * seçmek için kullanırız.
-     */
+    private Long id;
+    @Email
+    @Column(name= "email" ,unique = true)
+    @NotBlank
+    private String email;
+    private String password;
+    private String activationCode;
+    private String token;
+
     @Enumerated(EnumType.STRING)
-    State state;
+    @Builder.Default
+    Roles role = Roles.EMPLOYEE;
+
 }

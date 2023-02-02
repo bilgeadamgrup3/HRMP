@@ -1,6 +1,8 @@
 package com.bilgeadam.mapper;
 
+import com.bilgeadam.dto.request.CreateProfileRequestDto;
 import com.bilgeadam.dto.request.RegisterRequestDto;
+import com.bilgeadam.dto.response.LoginResponseDto;
 import com.bilgeadam.dto.response.RegisterResponseDto;
 import com.bilgeadam.repository.entity.Auth;
 import org.mapstruct.Mapper;
@@ -14,10 +16,16 @@ public interface IAuthMapper {
 
     IAuthMapper INSTANCE = Mappers.getMapper(IAuthMapper.class);
 
-    Auth fromRegisterRequestDto(final RegisterRequestDto dto);
+    Auth fromRequestToAuth(final RegisterRequestDto dto);
+
+    LoginResponseDto fromAuthToLoginResponseDto(final Auth auth);
+
+    RegisterResponseDto fromAuthToLoginResponse(final  Auth auth);
+
 
     @Mappings({
             @Mapping(source = "id", target = "authid")
     })
-    RegisterResponseDto fromAuth(final Auth auth);
+    CreateProfileRequestDto fromAuth(final Auth auth);
+
 }

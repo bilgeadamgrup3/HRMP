@@ -9,5 +9,4 @@ dependencies {
     implementation libs.postgreSQL
     implementation libs.springCloudConfigClient
     implementation libs.springBootStarterSecurity
-    implementation 'org.springframework.boot:spring-boot-starter-security'
 }

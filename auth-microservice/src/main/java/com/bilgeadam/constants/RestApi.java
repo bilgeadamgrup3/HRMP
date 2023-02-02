@@ -7,6 +7,6 @@ public class RestApi {
 
     public static final String AUTH = VERSION+DEV+"/auth";
 
-    public static final String DOLOGIN = "/dologin";
+    public static final String LOGIN = "/login";
     public static final String REGISTER = "/register";
 }

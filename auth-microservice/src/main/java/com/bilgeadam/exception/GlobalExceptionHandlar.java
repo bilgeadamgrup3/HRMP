@@ -1,7 +1,6 @@
 package com.bilgeadam.exception;
 
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -37,7 +36,7 @@ public class GlobalExceptionHandlar {
     @ResponseBody
     public final ResponseEntity<ErrorMessage> handleMessageNotReadableException(
             HttpMessageNotReadableException exception) {
-        ErrorType errorType = BAD_REQUEST_ERROR;
+        ErrorType errorType = BAD_REQUEST;
         return new ResponseEntity<>(createErrorMessage(exception,errorType), errorType.getHttpStatus());
     }
 
@@ -45,15 +44,7 @@ public class GlobalExceptionHandlar {
     @ResponseBody
     public final ResponseEntity<ErrorMessage> handleInvalidFormatException(
             InvalidFormatException exception) {
-        ErrorType errorType = BAD_REQUEST_ERROR;
-        return new ResponseEntity<>(createErrorMessage(exception,errorType), errorType.getHttpStatus());
-    }
-
-    @ExceptionHandler(DataIntegrityViolationException.class)
-    @ResponseBody
-    public final ResponseEntity<ErrorMessage> handlePSQLException(
-            DataIntegrityViolationException exception) {
-        ErrorType errorType = REGISTER_KULLANICIADI_KAYITLI;
+        ErrorType errorType = BAD_REQUEST;
         return new ResponseEntity<>(createErrorMessage(exception,errorType), errorType.getHttpStatus());
     }
 
@@ -63,7 +54,7 @@ public class GlobalExceptionHandlar {
     public final ResponseEntity<ErrorMessage> handleMethodArgumentMisMatchException(
             MethodArgumentTypeMismatchException exception) {
 
-        ErrorType errorType = BAD_REQUEST_ERROR;
+        ErrorType errorType = BAD_REQUEST;
         return new ResponseEntity<>(createErrorMessage(exception,errorType), errorType.getHttpStatus());
     }
 
@@ -72,7 +63,7 @@ public class GlobalExceptionHandlar {
     public final ResponseEntity<ErrorMessage> handleMethodArgumentMisMatchException(
             MissingPathVariableException exception) {
 
-        ErrorType errorType = BAD_REQUEST_ERROR;
+        ErrorType errorType = BAD_REQUEST;
         return new ResponseEntity<>(createErrorMessage(exception,errorType), errorType.getHttpStatus());
     }
 
@@ -82,7 +73,7 @@ public class GlobalExceptionHandlar {
     public final ResponseEntity<ErrorMessage> handleMethodArgumentNotValidException(
             MethodArgumentNotValidException exception) {
 
-        ErrorType errorType = BAD_REQUEST_ERROR;
+        ErrorType errorType = BAD_REQUEST;
         List<String> fields = new ArrayList<>();
         exception
                 .getBindingResult()
@@ -93,14 +84,6 @@ public class GlobalExceptionHandlar {
         return new ResponseEntity<>(errorMessage, errorType.getHttpStatus());
     }
 
-    /**
-     * Hata yakalama işlemleri bir çok hata için ayrı ayrı yapılmalıdır. bu nedenel tüm hataların
-     * içerisine log alma işlemi yazmak zorunda kalırız. bu işlemleri tekelleştirmek ve hata log kayıtlarını
-     * toplamak için tekbir method kullanmak daha doğru olacaktır.
-     * @param exception
-     * @param errorType
-     * @return
-     */
     private ErrorMessage createErrorMessage(Exception exception,ErrorType errorType){
         System.out.println("Tüm hataların geçtiği nokta...: "+ exception.getMessage());
         return ErrorMessage.builder()

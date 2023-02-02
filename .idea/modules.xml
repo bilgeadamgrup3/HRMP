@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/auth-microservice/HRMP.auth-microservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/auth-microservice/HRMP.auth-microservice.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/config-server/HRMP.config-server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/config-server/HRMP.config-server.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/userprofile-microservice/HRMP.userprofile-microservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/userprofile-microservice/HRMP.userprofile-microservice.main.iml" />
     </modules>

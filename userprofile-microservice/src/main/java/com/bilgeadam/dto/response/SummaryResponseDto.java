@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 public class SummaryResponseDto {
     private String profileImage;
     private String name;
+    private String middleName;
     private String lastName;
     private String email;
     private String address;

@@ -13,5 +13,6 @@ public class RegisterResponseDto {
     Long authid;
     String content;
     String email;
-    Integer registerstate;
+
+    Integer registerState;
 }

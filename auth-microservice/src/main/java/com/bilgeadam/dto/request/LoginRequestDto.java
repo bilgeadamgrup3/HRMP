@@ -14,19 +14,15 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class RegisterRequestDto {
+public class LoginRequestDto {
 
     @Email(message = "Lutfen gecerli bir e-mail adresi giriniz.")
     @NotBlank(message = "Kullanici e-maili bos gecilemez.")
     String email;
 
-    @NotBlank(message = "Sifre bos gecilemez.")
-    @Size(min = 8 ,max=32 ,message = "Sifre en az 8 karakter en fazla 32 karakter olabilir")
-    @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=*!])(?=\\S+$).{8,}$")
+    @NotBlank(message = "Şifre boş geçilemez")
+    @Size(min = 8,max = 16)
+    @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=*!])(?=\\S+$).{8,}$", message = "Sifreniz istenilen özelliklere sahip degil.")
     String password;
 
-    @NotBlank(message = "Sifre bos gecilemez.")
-    @Size(min = 8,max = 32)
-    @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=*!])(?=\\S+$).{8,}$")
-    String rePassword;
 }

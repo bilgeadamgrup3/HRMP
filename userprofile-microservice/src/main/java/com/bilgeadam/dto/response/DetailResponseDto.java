@@ -13,7 +13,6 @@ public class DetailResponseDto {
     private String name;
     private String middleName;
     private String lastName;
-    private String lastName2;
     private String profileImage;
     private String identificationNumber;
     private String birthplace;

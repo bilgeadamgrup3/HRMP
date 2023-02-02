@@ -17,8 +17,6 @@ public class CreateProfileRequestDto {
     @NotNull
     Long authid;
     @NotBlank
-    String username;
-    @NotBlank
     @Email
     String email;
     String token;
