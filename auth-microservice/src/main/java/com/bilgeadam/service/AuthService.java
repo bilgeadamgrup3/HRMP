@@ -57,9 +57,10 @@ public class AuthService extends ServiceManager<Auth,Long> {
         }
         Auth auth = IAuthMapper.INSTANCE.fromRequestToAuth(dto);
         auth.setActivationCode(CodeGenerator.generateCode());
-        auth.setRole(Roles.GENERAL_MANAGER);
+        auth.setRole(dto.getRole());
         save(auth);
         userProfileManager.createProfile(IAuthMapper.INSTANCE.fromAuth(auth));
+
         return IAuthMapper.INSTANCE.fromAuthToLoginResponse(auth);
     }
 }

@@ -28,7 +28,7 @@ public class AuthController {
 
     @PostMapping(REGISTER)
     @CrossOrigin("*")
-    @Operation(summary = "Manager kayit eden metot")
+    @Operation(summary = "Manager kayit")
     public ResponseEntity<RegisterResponseDto> registerManager(@RequestBody @Valid RegisterRequestDto dto){
         return  ResponseEntity.ok(authService.registerManager(dto));
     }

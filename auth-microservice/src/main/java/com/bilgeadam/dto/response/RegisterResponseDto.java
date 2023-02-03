@@ -10,8 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 public class RegisterResponseDto {
-    Long authid;
-    String content;
+    Long id;
     String email;
 
     Integer registerState;

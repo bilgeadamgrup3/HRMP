@@ -1,5 +1,6 @@
 package com.bilgeadam.dto.request;
 
+import com.bilgeadam.repository.entity.Roles;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,4 +30,6 @@ public class RegisterRequestDto {
     @Size(min = 8,max = 32)
     @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=*!])(?=\\S+$).{8,}$")
     String rePassword;
+
+    Roles role;
 }
