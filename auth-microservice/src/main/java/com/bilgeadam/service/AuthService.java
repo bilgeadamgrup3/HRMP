@@ -49,7 +49,7 @@ public class AuthService extends ServiceManager<Auth,Long> {
         return loginResponseDto;
     }
 
-    public RegisterResponseDto registerManager(RegisterRequestDto dto) {
+    public RegisterResponseDto register(RegisterRequestDto dto) {
         if(!dto.getPassword().equals(dto.getRePassword()))
             throw  new AuthMicroserviceException(ErrorType.REGISTER_REPASSWORD_ERROR);
         if(authRepository.findOptionalByEmail(dto.getEmail()).isPresent()){
