@@ -20,7 +20,7 @@ public interface IAuthMapper {
 
     LoginResponseDto fromAuthToLoginResponseDto(final Auth auth);
 
-    RegisterResponseDto fromAuthToLoginResponse(final  Auth auth);
+    RegisterResponseDto fromAuthToRegisterResponse(final  Auth auth);
 
 
     @Mappings({

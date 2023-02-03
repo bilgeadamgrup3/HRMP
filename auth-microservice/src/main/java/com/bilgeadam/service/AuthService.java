@@ -11,13 +11,11 @@ import com.bilgeadam.manager.UserProfileManager;
 import com.bilgeadam.mapper.IAuthMapper;
 import com.bilgeadam.repository.AuthRepository;
 import com.bilgeadam.repository.entity.Auth;
-import com.bilgeadam.repository.entity.Roles;
 import com.bilgeadam.utility.CodeGenerator;
 import com.bilgeadam.utility.JwtTokenManager;
 import com.bilgeadam.utility.ServiceManager;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Service
@@ -61,6 +59,6 @@ public class AuthService extends ServiceManager<Auth,Long> {
         save(auth);
         userProfileManager.createProfile(IAuthMapper.INSTANCE.fromAuth(auth));
 
-        return IAuthMapper.INSTANCE.fromAuthToLoginResponse(auth);
+        return IAuthMapper.INSTANCE.fromAuthToRegisterResponse(auth);
     }
 }
