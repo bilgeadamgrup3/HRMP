@@ -12,5 +12,5 @@ Projede İK çalışanı (yönetici) ve personel rolleri bulunmaktadır.
 * Barış Mert Cömertoğlu 
 * Yiğit Aral Yücepur 
 * Selçuk Durukan 
-* Şeyda Mersin 
+* Şeyda Mersin. 
 * Barış Yücetürk 
