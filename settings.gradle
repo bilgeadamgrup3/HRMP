@@ -2,4 +2,7 @@ rootProject.name = 'HRMP'
 include 'auth-microservice'
 include 'config-server'
 include 'userprofile-microservice'
+include 'mail-service'
+include 'company-microservice'
+include 'api-gateway-service'
 

@@ -4,7 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/auth-microservice/HRMP.auth-microservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/auth-microservice/HRMP.auth-microservice.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/config-server/HRMP.config-server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/config-server/HRMP.config-server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mail-service/HRMP.mail-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mail-service/HRMP.mail-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/userprofile-microservice/HRMP.userprofile-microservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/userprofile-microservice/HRMP.userprofile-microservice.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/config-server/com.bilgeadam.HRMP.config-server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/config-server/com.bilgeadam.HRMP.config-server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/userprofile-microservice/com.bilgeadam.HRMP.userprofile-microservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/userprofile-microservice/com.bilgeadam.HRMP.userprofile-microservice.main.iml" />
     </modules>
   </component>
 </project>

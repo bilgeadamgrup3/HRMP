@@ -11,6 +11,6 @@ Projede İK çalışanı (yönetici) ve personel rolleri bulunmaktadır.
 ## Authors
 * Barış Mert Cömertoğlu 
 * Yiğit Aral Yücepur 
-* Şelçuk Durukan 
+* Selçuk Durukan 
 * Şeyda Mersin 
 * Barış Yücetürk 
